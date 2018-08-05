@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>SCORE</h2>
+<table style="width:100%">
+    <thead>
+        <tr>
+            <!--There are three empty cell in the first header-->
+            <th></th>
+            <th></th>
+            <!--s2 is the string2, according to application.py-->
+            {% for character in s2 %}
+                <th>{{character}}</th>
+            {% endfor %}
+        </tr>
+
+    </thead>
+    <tbody>
+
+        {% for t in range(len(s1)+1) %}
+            <tr>
+
+            {% if t==0 %}
+                <th></th>
+            {% else %}
+                <th>{{s1[t-1]}}</th>
+            {% endif %}
+
+
+            {% for q in range(len(s2)+1)%}
+                <th>{{ matrix[q][t][0] }}</th>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
